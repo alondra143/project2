@@ -8,7 +8,7 @@ var passport = require('passport');
 var methodOverride = require('method-override');
 const indexRoutes = require('./routes/index')
 const usersRoutes = require('./routes/users');
-
+const crystalRoutes = require('./routes/crystals');
 // load the env vars
 require('dotenv').config();
 
@@ -53,6 +53,7 @@ app.use(function (req, res, next) {
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes);
 app.use('/', usersRoutes);
+app.use('/', crystalRoutes);
 
 
 // invalid request, send 404 page

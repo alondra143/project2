@@ -3,7 +3,7 @@ const passport = require('passport');
 
 // The root route renders our only view
 router.get('/', function(req, res) {
-  res.redirect('/cc')
+  res.redirect('/login')
   // Where do you want to go for the root route
   // in the student demo this was res.redirect('/students'), what do you want? NO /USERS, WHATEVER MAIN RESOURCE IS
 });
@@ -18,15 +18,15 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/home', // where do you want the client to go after you login 
-    failureRedirect : '/cc' // where do you want the client to go if login fails
+    successRedirect : '/crystals', // where do you want the client to go after you login 
+    failureRedirect : '/login' // where do you want the client to go if login fails
   }
 ));
 
 // OAuth logout route
 router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/cc'); // decide where user goes once they log out
+  res.redirect('/login'); // decide where user goes once they log out
 });
 
 module.exports = router;

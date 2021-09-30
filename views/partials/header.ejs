@@ -5,8 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Materialize CSS Framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css" />
+  <!-- JavaScript for Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
+<div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="" class="brand-logo left">CRYSTAL CLUSTERS</a>
+        <ul class="right">
+          <li>
+            <% if (user) { %>
+              <a href="/logout">Hi <%= user.name %>, Log Out</a>
+            <% } else { %>
+              <a href="/auth/google"> Login with Google</a>
+            <% } %>       
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 <body>
     testing
-</body>
-</html>

@@ -1,7 +1,7 @@
 var router = require('express').Router();
 var usersCtrl = require('../controllers/users');
 
-router.get('/cc', usersCtrl.index);
+router.get('/login', usersCtrl.index);
 
 
 
