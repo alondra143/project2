@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 // user has many collections, a collection belongs to a user
 const collectionSchema = new mongoose.Schema({
     name: String,
-    belongsTo: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+    userId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+    userName: String,
     crystalsAdded: [{type: mongoose.Schema.Types.ObjectId, ref: 'Crystal'}]
 });
 

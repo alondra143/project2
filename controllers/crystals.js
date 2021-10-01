@@ -22,6 +22,7 @@ function newCrystal(req,res) {
 };
 
 function create(req,res) {
+    console.log(req.body)
     Crystal.create(req.body, function(err, createdCrystal) {
         if(err) {
             console.log(err);

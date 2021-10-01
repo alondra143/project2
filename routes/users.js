@@ -5,7 +5,6 @@ router.get('/login', usersCtrl.index);
 
 
 
-
 // USE THIS FOR ADDING CRYSTAL TO COLLECTION, MAYBE POSTING OR DELETING REVIEWS
 // function isLoggedIn(req, res, next) {
 //     if (req.isAuthenticated()) return next();

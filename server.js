@@ -9,6 +9,7 @@ var methodOverride = require('method-override');
 const indexRoutes = require('./routes/index')
 const usersRoutes = require('./routes/users');
 const crystalRoutes = require('./routes/crystals');
+const collectionRoutes = require('./routes/collections');
 // load the env vars
 require('dotenv').config();
 
@@ -54,6 +55,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRoutes);
 app.use('/', usersRoutes);
 app.use('/', crystalRoutes);
+app.use('/', collectionRoutes);
 
 
 // invalid request, send 404 page
