@@ -1,0 +1,18 @@
+<%- include('../partials/header')  %> 
+    <p>WARNING: please make sure crystal has not already been shared to our collection!</p>
+    <select>
+        here there needs to be a for loop function for each crystal name already posted.
+    </select>
+    <form id="new-form" action="/crystals" method="POST">
+        <label>name of crystal:</label>
+        <input type="text" name="name">
+        <label>variety/color:</label>
+        <input type="text" name="color">
+        <label>description:</label>
+        <input type="text" name="description" placeholder="please write what it's known to be beneficial for, fun facts, or any background pertaining to its origin">
+        <label>picture:</label>
+        <input type="text" name="image" placeholder="image address only">
+        <input type="submit" value="+ + +">
+    </form>
+    </body>
+</html>
