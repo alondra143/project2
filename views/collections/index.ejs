@@ -1,3 +1,11 @@
 <%- include('../partials/header')  %> 
+<div><%= user.name %>'<%= title %> </div>
+<div>
+    <% collections.forEach(c => { %>
+     <li>
+         <a href="/collections/<%= c._id %>"><%= c.name %></a>
+     </li>
+    <% }) %>
+</div>
 </body>
 </html>

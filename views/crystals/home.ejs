@@ -1,6 +1,6 @@
 <%- include('../partials/header')  %> 
 <div>this is where all the crystals will be featured</div>
-<form id="new-collection" action="/crystals/<%= user._id %>/collections" method="POST">
+<form id="new-collection" action="/crystals/<%= user._id %>/collection" method="POST">
 <div>create a collection:</div><input type="text" name="name" placeholder="name"><input type="submit" value="+ + +"></form>
 <div class="container">
     <p><% crystals.forEach(c => { %></p>
