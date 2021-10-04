@@ -1,4 +1,4 @@
-const User = require('../models/user');
+const Crystal = require('../models/crystal');
 const Collection = require('../models/collection')
 
 module.exports = {
@@ -6,6 +6,25 @@ module.exports = {
     index,
     show,
 }
+
+
+
+
+// function addUser(req, res) {
+//     // find the crystal to add to a collection
+//     Crystal.findById(req.params.id, function(err, crystal) {
+//         // if the crystal already has the user's id in it's addedToCollection, redirect
+//         if(crystal.usersAddedToCollection.id(req.user._id)) return res.redirect('/crystals');
+//         // add user to crystals's addedToCollection array
+//         crystal.usersAddedToCollection.push(req.user._id);
+//         // save to database
+//         crystal.save(function(err) {
+//             res.redirect(`/crystals/${crystal._id}`);
+//         });
+//     });
+// };
+
+
 function create(req, res) {
     const collection = new Collection(req.body)
     collection.userId = req.user._id;

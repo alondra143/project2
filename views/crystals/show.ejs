@@ -6,6 +6,11 @@
         <br>
         <div><%= crystal.color %> </div>
         <div><%= crystal.description %></div>
-  </section>
+        <form id="add-crys-to-coll" action="/crystals/" method="POST">
+            <select name="collectionId">
+                <option value="ihy">ihy</option>>
+            </select>
+            <button type="submit">add to collection</button>
+        </form>
 </body>
 </html>
