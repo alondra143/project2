@@ -5,12 +5,15 @@
         <h3><%= crystal.name %></h3>
         <br>
         <div><%= crystal.color %> </div>
+        <div><%= crystal.usersAddedToCollection %></div>
         <div><%= crystal.description %></div>
-        <form id="add-crys-to-coll" action="/crystals/" method="POST">
-            <select name="collectionId">
-                <option value="ihy">ihy</option>>
-            </select>
-            <button type="submit">add to collection</button>
-        </form>
+    </section>   
+    <form id="add-crys-to-coll" action="/crystals" method="POST">
+         <select name="collectionId">
+            <option value="fff">heloo</option>
+            <option value="die"> whyyy</option>
+        </select>
+        <button type="submit">add to collection</button>
+    </form>
 </body>
 </html>
