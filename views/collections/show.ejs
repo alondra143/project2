@@ -1,5 +1,4 @@
 <%- include('../partials/header')  %> 
-</body>
     <h2><%= collection.name %></h2>
     <div>Created by: <%= collection.userName %></div>
     <div>CRYSTALS:</div>
@@ -7,4 +6,6 @@
      <li><a href='/crystals/<%= c._id %>'><%= c.name %></a></li>
     <% }) %>
     </ul>
+    <a href='/collections/<%= collection._id %>/edit'>edit your collection</a>
+</body>
 </html>

@@ -5,6 +5,60 @@ module.exports = {
     create,
     index,
     show,
+    edit,
+    update,
+    delete: deleteCollection,
+}
+
+
+
+function edit(req, res) {
+    Collection.findById(req.params.id)
+                .populate('crystalsAdded')
+                .exec(function(err, collection) {
+        if(!collection.userId.equals(req.user._id)) {
+            res.redirect('/crystals');
+        } else {
+            console.log(collection, 'this is my collection');
+        res.render('collections/edit', {collection});
+        }
+    })
+}
+
+async function update(req, res) {
+    try {
+        const collection = await Collection.findById(req.params.id)
+                if(!collection.userId.equals(req.user._id)) {
+                    res.redirect('/crystals');
+                } else {
+                    console.log(req.body, 'this is my req.body')
+                    collection.name = req.body.name;
+                    collection.save(function(err) {
+                        res.render('collections/show', {
+                            collection
+                        })
+                    })
+                }
+    }catch(err) {
+        res.send(err)
+    }
+    }
+
+async function deleteCollection(req, res) {
+    try {
+        const collection = await Collection.findById(req.params.id)
+            if(!collection.userId.equals(req.user._id)) {
+                res.redirect('/crystals');
+            } else {
+                collection.remove();
+                collection.save(function(err) {
+                    res.redirect(`/crystals/${req.user._id}/collections`);
+                })
+            }
+    } catch(err) {
+        res.send(err)
+    }
+    
 }
 
 function create(req, res) {
@@ -41,5 +95,3 @@ async function show(req, res) {
         res.send(err);
     }
 }
-
-//populate
