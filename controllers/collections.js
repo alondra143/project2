@@ -33,10 +33,13 @@ async function index(req, res) {
 
 async function show(req, res) {
     try {
-        const collection = await Collection.findById(req.params.id);
+        const collection = await Collection.findById(req.params.id)
+                                            .populate('crystalsAdded')
         res.render('collections/show', {
             collection})
     } catch(err) {
         res.send(err);
     }
 }
+
+//populate

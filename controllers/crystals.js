@@ -75,7 +75,7 @@ function create(req, res) {
 async function show(req, res) {
     try {
         const crystal = await Crystal.findById(req.params.id)
-        const collections = await Collection.find({ userId: req.user._id })
+        const collections = await Collection.find({ userId: req.user._id, crystalsAdded: {$nin: req.params.id}})
         res.render('crystals/show', {
             title: 'MORE ABOUT: ', crystal, collections,
         });
