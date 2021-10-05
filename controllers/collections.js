@@ -8,9 +8,22 @@ module.exports = {
     edit,
     update,
     delete: deleteCollection,
+    removeFromCollection,
 }
 
-
+async function removeFromCollection(req, res) {
+    console.log('???');
+    console.log(req.params);
+    try {
+        const collectionDoc = await Collection.findById(req.params.collectionId)
+            collectionDoc.crystalsAdded.remove(req.params.crystalId);
+            collectionDoc.save(function(err) {
+                res.redirect(`/collections/${collectionDoc._id}`)
+            })
+    } catch(err) {
+        res.send(err);
+    }
+}
 
 function edit(req, res) {
     Collection.findById(req.params.id)

@@ -39,12 +39,17 @@
     </form>
     <div>edit your cluster:</div>
     <ul><% collection.crystalsAdded.forEach(c => { %>
-        <li><%= c.name %></li>
-    <% }) %>
+        <% if (collection.userId.equals(user._id)) { %>
+        <form action='/collections/<%= collection._id %>/crystals/<%= c._id %>?_method=DELETE' method='POST'>
+            <li><%= c.name %><button type='submit' name='deleteFrom'>x</button>
+            <% } %>
+         </li>
+        <% }) %>
+        </form>
     </ul>
     <div>delete entire collection:</div>
     <form action='/collections/<%= collection._id %>?_method=DELETE' method='POST'>
-        <button type="submit" name="delete">X</button>
+        <button type='submit' name='delete'>X</button>
     </form>
 
 </body>
@@ -58,3 +63,4 @@
      <!--<% } %>-->
 <!--</li>-->
 <!--<% }) %> -->
+<!-- /collections/:collectionId/crystals/:crystalId -->
