@@ -18,7 +18,7 @@ async function removeFromCollection(req, res) {
         const collectionDoc = await Collection.findById(req.params.collectionId)
             collectionDoc.crystalsAdded.remove(req.params.crystalId);
             collectionDoc.save(function(err) {
-                res.redirect(`/collections/${collectionDoc._id}`)
+                res.redirect(`/collections/${collectionDoc._id}/edit`)
             })
     } catch(err) {
         res.send(err);
