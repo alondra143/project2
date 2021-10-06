@@ -30,7 +30,7 @@ function edit(req, res) {
                 .populate('crystalsAdded')
                 .exec(function(err, collection) {
         if(!collection.userId.equals(req.user._id)) {
-            res.redirect('/crystals');
+            res.redirect('/');
         } else {
             console.log(collection, 'this is my collection');
         res.render('collections/edit', {collection});
@@ -42,7 +42,7 @@ async function update(req, res) {
     try {
         const collection = await Collection.findById(req.params.id)
                 if(!collection.userId.equals(req.user._id)) {
-                    res.redirect('/crystals');
+                    res.redirect('/');
                 } else {
                     console.log(req.body, 'this is my req.body')
                     collection.name = req.body.name;
@@ -61,7 +61,7 @@ async function deleteCollection(req, res) {
     try {
         const collection = await Collection.findById(req.params.id)
             if(!collection.userId.equals(req.user._id)) {
-                res.redirect('/crystals');
+                res.redirect('/');
             } else {
                 collection.remove();
                 collection.save(function(err) {

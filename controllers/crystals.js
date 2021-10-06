@@ -60,6 +60,9 @@ function index(req, res) {
             crystals: crystalDocuments,
         });
     });
+    if (req.user === undefined) {
+        res.redirect('/');
+    }
 };
 
 function newCrystal(req, res) {
