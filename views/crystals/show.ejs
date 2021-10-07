@@ -4,9 +4,10 @@
         <img src=<%= crystal.image %>>
         <h3><%= crystal.name %></h3>
         <br>
-        <div><%= crystal.color %> </div>
+        <div>added by: <%= crystal.userCreated.name %> </div>
+        <div>color/variety: <%= crystal.color %> </div>
         <div><%= crystal.usersAddedToCollection %></div>
-        <div><%= crystal.description %></div>
+        <div>description: <%= crystal.description %></div>
     <section id="user-collections">  
     <form id="add-crys-to-coll" action="/crystals/<%= crystal._id %>" method="POST">
         <select class="rewrite-select" name="collectionId">

@@ -76,6 +76,7 @@ async function show(req, res) {
     try {
         // find crystal to show
         const crystal = await Crystal.findById(req.params.id)
+                                    .populate('userCreated');
         // only show user collections that crystal has not already been added to, if any
         const collections = await Collection.find({ userId: req.user._id, crystalsAdded: {$nin: req.params.id}})
         res.render('crystals/show', {
