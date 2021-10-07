@@ -1,36 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheets/style.css"/>
-  <!-- JavaScript for Materialize -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</head>
-<div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper">
-        <a href="/crystals" class="brand-logo left">CRYSTAL CASTLE</a>
-        <ul class="right">
-            <% if (user) { %>
-          <li>
-            <a href="/crystals/<%= user._id %>/collections">View All Collections</a>
-            </li>
-            <li>
-              <a href="/logout">Hi <%= user.name %>, Log Out</a>
-            <% } else { %>
-              <a href="/auth/google"> Login with Google</a>
-            <% } %>       
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-<body>
-    <a href="/crystals/new">add to our cluster!</a>
+<%- include('../partials/header')  %> 
 <h3>revamp your collection</h3>
     <form action='/collections/<%= collection._id %>?_method=PUT' method='POST'>
         <div>new name for collection:</div>

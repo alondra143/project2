@@ -22,7 +22,47 @@
 h2 {
     font-family: 'Major Mono Display';
 }
-#section-container {
-    display: inline-flex;
+/* #section-container {
+    display: inline-flex; */
 
-}
+/* Heading */
+#show-container h3{
+    transform:translatex(266px) translatey(-214px);
+    width:615px;
+   }
+   
+   /* Show container */
+   #show-container{
+    display:grid;
+    transform:translatex(-23px) translatey(5px);
+    align-content:center;
+    justify-content:center;
+   }
+   
+   /* Division */
+   #show-container div{
+    min-height:35px;
+    transform:translatex(265px) translatey(-208px);
+    width:576px;
+   }
+   
+   /* Image */
+   #show-container img{
+    margin-bottom:0px;
+   }
+   
+   /* User collections */
+   #user-collections{
+    padding-right:273px;
+    min-height:53px;
+    position:relative;
+    top:-198px;
+    left:218px;
+   }
+   
+   /* Button */
+   #add-crys-to-coll button{
+    transform:translatex(292px) translatey(-6px);
+    width:142px;
+    min-height:53px;
+   }

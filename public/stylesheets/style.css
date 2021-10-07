@@ -45,13 +45,15 @@ p{
 }
 .container {
   display: grid;
+  justify-content: center;
+  align-content: center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   height: 250px;
   text-align: center;
   column-gap: 1.2rem;;
   row-gap: 5rem;
-  margin: 10px 8px 8px 10px;
+  padding-top: 27rem;
   color: rgba(154, 42, 64, 1);
 }
 .new-crystal{
