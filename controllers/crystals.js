@@ -12,47 +12,18 @@ module.exports = {
 };
 
 function addToCollection(req, res) {
-    console.log(req.body);
-    console.log(req.params);
+    // 1. find the collection user chose to add crystal to
     Collection.findById(req.body.collectionId, function(err, collection) {
+        // 2. add crystal id into the crystalsAdded array of collection Schema
         collection.crystalsAdded.push(req.params.id);
+        // 3. save to update database
         collection.save(function(e){
             console.log('user added crystal to a collection');
+            // 4. take user back to the crystal's page if successful
             res.redirect(`/crystals/${req.params.id}`);
         })
     })
 }
-
-// function addUser(req, res) {
-//     console.log(req.body, 'this is req.body (collection)');
-//     console.log(req.params, 'this is req.params (crystal)');
-//     Collection.findById(req.body.collectionId, function (err, collection) {
-//         Crystal.findById(req.params.id, function (err, crystal) {
-//             let foundUser = false;
-//             let userString = req.user._id.toString(); // iterate thru usersAddedToCollection array and make it a string
-//             for (let i = 0; i < crystal.usersAddedToCollection.length; i++) {
-//                 let tempId = crystal.usersAddedToCollection[i].toString();
-//                 if (userString == tempId) {
-//                     foundUser = true;
-//                     break
-//                 }
-//             }
-//             if (foundUser) {
-//                 console.log(' we redirected')
-//                 res.redirect('/crystals')
-//             } else {
-//                 crystal.usersAddedToCollection.push(req.user._id);
-//                 collection.crystalsAdded.push(req.params.id)
-//                 collection.save(function (e) {
-//                     crystal.save(function (err) {
-//                         console.log('user added to crystal');
-//                         res.redirect(`/crystals/${req.params.id}`);
-//                     })
-//                 })
-//             }
-//         })
-//     })
-// }
 
 function index(req, res) {
     Crystal.find({}, function (err, crystalDocuments) {
@@ -76,7 +47,7 @@ function newCrystal(req, res) {
 };
 
 function create(req, res) {
-    console.log(req.body.name, 'name')
+    // change crystal name to all lowercase
     const n = req.body.name;
     req.body.name = n.toLowerCase();
     if (req.user === undefined) {
@@ -87,10 +58,11 @@ function create(req, res) {
                 console.log(err);
                 return res.redirect('/crystals/new');
             };
-            
+            // add user's id to userCreated property
             createdCrystal.userCreated = req.user._id;
+            // save to update database
             createdCrystal.save(function(err) {
-                console.log(createdCrystal, '< crystal added by user');
+                // take user to view all crystals
                 res.redirect('/crystals')
             })
         });
@@ -98,13 +70,17 @@ function create(req, res) {
 };
 
 async function show(req, res) {
+    if (req.user === undefined) {
+        res.redirect('/');
+    }
     try {
+        // find crystal to show
         const crystal = await Crystal.findById(req.params.id)
+        // only show user collections that crystal has not already been added to, if any
         const collections = await Collection.find({ userId: req.user._id, crystalsAdded: {$nin: req.params.id}})
         res.render('crystals/show', {
             title: 'MORE ABOUT: ', crystal, collections,
         });
-        console.log(crystal);
     } catch (err) {
         console.log(err);
     }

@@ -1,34 +1,39 @@
-# passport-boilerplate
-
-
+# <h1 align="center">CRYSTAL CULTIQUE</h1>
+## Background Info
+Learning about crystals has been prevalent in pop-culture for the last couple of years, but most websites that offer information are set up as jewelry shops or personal blogs. This app was designed with the idea to allow users to collaborate on what they want others to know about crystals they're familiar with, read and learn on other crystals they haven't researched on, and allow them to categorize and store crystals into different 'collections' for future reference. Sort of like a Pinterest for crystals.
 This is your passport boilerplate.
 
-## Setup 
-
-1. Clone the repo
-2. Rename the folder to your Project
-3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
+### Wireframe
+img here
 
 
-#### Setup your git repo
-1. in the project root `git init`
-2. `git add .` to add all the starter code
-3. `git commit -m "setup boilerplate"` 
-4. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-5. copy the remote address
-6. In your terminal add the remote `git remote add origin yourGithubRepo'sAddressGoesHere`
-7. `git pull origin master` If a screen pulls up asking you to do something just press `:q` and then `enter` (thats vim btw :) )
-8. `git push origin master`
+### ERD
+img here
 
-#### Setup your login
 
-0. Setup your database connection string
-1. Then Setup Your User Model, 
-2. Follow the steps from the lesson plan to get your Google login credentials for your `.env` file (create the file if you haven't), or you can just copy the ones from earlier if you want to reuse them.
-3. Setup the Code in your config passport 
-4. Setup your callback routes in your `routes/index`
-5. Setup a view and test your login!
+### Screenshots
+| Screenshot | Description |
+|------------ | ------------|
+| App's landing page | img here |
+| Home Page | img here |
+| Details | img here |
+| User Collections | img here |
+| Collection Details | img here |
+| Edit Collection | img here |
 
-#### Make a commit 
 
-```git commit -m "setup up oauth and User Model"```
+### Technologies Used:
+EJS | HTML | MongoDB | Mongoose | JavaScript | CSS
+
+
+
+## Getting Started
+***trello link here***
+***app link here***
+
+## Next Steps (Icebox):
+There's a lot of different ways that this app could grow and be more interactive between users. A main enhacement I would want to implement would be the ability to have users leave a comment on specific crystal pages to share their input on crystals that have already been created on the page. Being able to record the amount of users that have added a specific crystal to a collection can allow for users to see what's been popular on the site, and maybe would compell them to look into the crystal.
+
+Other enhancements would be the ability to move crystals from one collection to another, rather than having to add it to different collections and delete it from the incorrect collection.
+
+For back-end development, I would want to implement stricter guidelines for submitting a crystal into the database, allow users to sort the crystals by alphabetical order or most popular, create the ability to have users share their collections either with other users or on different platforms, and have a more perosnalized user profile from the data retrieved by oAuth Google.

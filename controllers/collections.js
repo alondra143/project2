@@ -87,6 +87,9 @@ function create(req, res) {
 
 
 async function index(req, res) {
+    if (req.user === undefined) {
+        res.redirect('/');
+    }
     try {
         const collections = await Collection.find({userId: req.user._id});
         res.render('collections/index', {
