@@ -2,12 +2,12 @@
 ## Background Info
 Learning about crystals has been prevalent in pop-culture for the last couple of years, but most websites that offer information are set up as jewelry shops or personal blogs. This app was designed with the idea to allow users to collaborate on what they want others to know about crystals they're familiar with, read and learn on other crystals they haven't researched on, and allow them to categorize and store crystals into different 'collections' for future reference. Sort of like a Pinterest for crystals.
 
-### Wireframe
-img here
-
-
 ### ERD
-img here
+<img src="https://i.imgur.com/vzSChcL.png" width="900">
+
+
+### Wireframe
+<img src="https://i.imgur.com/YmBvBAV.png" width="900">
 
 
 ### Screenshots
