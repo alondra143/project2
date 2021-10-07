@@ -1,15 +1,15 @@
 <%- include('../partials/header')  %> 
-        <h2><%= title %></h2>
+    <h2><%= title %></h2>
+    <div id="show-container">
         <img src=<%= crystal.image %>>
         <h3><%= crystal.name %></h3>
         <br>
         <div><%= crystal.color %> </div>
         <div><%= crystal.usersAddedToCollection %></div>
         <div><%= crystal.description %></div>
-    </section> 
     <section id="user-collections">  
     <form id="add-crys-to-coll" action="/crystals/<%= crystal._id %>" method="POST">
-        <select name="collectionId">
+        <select class="rewrite-select" name="collectionId">
             <% collections.forEach(c => { %>
             <option value=<%= c._id %>><%= c.name %></option>
             <% }) %> 
@@ -17,5 +17,6 @@
         <button type="submit">add to collection</button>
     </form>
     </section>
+    </div>
 </body>
 </html>

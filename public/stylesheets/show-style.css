@@ -6,18 +6,6 @@
     margin-left: 15px;
 }
   
-.card .card-content .card-title {
-    margin-bottom: 10px;
-}
-  
-#search-row form {
-    padding-top: 20px;
-}
-  
-.student-name {
-    position: relative;
-    top: -5px;
-}
   
 .collection-item form {
     margin-top: -5px;
@@ -26,4 +14,15 @@
     font-family: 'Megrim';
     background-color: rgba(83, 21, 60, 1);
 }
-  
+.rewrite-select {
+    background-color: whitesmoke;
+    color: rgba(83, 21, 60, 1);
+    padding: 10px;
+}
+h2 {
+    font-family: 'Major Mono Display';
+}
+#section-container {
+    display: inline-flex;
+
+}

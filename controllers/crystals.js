@@ -79,7 +79,7 @@ async function show(req, res) {
         // only show user collections that crystal has not already been added to, if any
         const collections = await Collection.find({ userId: req.user._id, crystalsAdded: {$nin: req.params.id}})
         res.render('crystals/show', {
-            title: 'MORE ABOUT: ', crystal, collections,
+            title: 'more about: ', crystal, collections,
         });
     } catch (err) {
         console.log(err);

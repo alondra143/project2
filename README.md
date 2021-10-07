@@ -29,6 +29,7 @@ EJS | HTML | MongoDB | Mongoose | JavaScript | CSS
 ## Getting Started
 ***trello link here***
 ***app link here***
+https://crystal-cultique.herokuapp.com/
 
 ## Next Steps (Icebox):
 There's a lot of different ways that this app could grow and be more interactive between users. A main enhacement I would want to implement would be the ability to have users leave a comment on specific crystal pages to share their input on crystals that have already been created on the page. Being able to record the amount of users that have added a specific crystal to a collection can allow for users to see what's been popular on the site, and maybe would compell them to look into the crystal.
