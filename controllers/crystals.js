@@ -66,21 +66,35 @@ function index(req, res) {
 };
 
 function newCrystal(req, res) {
-    res.render('crystals/new', {
+    if (req.user === undefined) {
+        res.redirect('/');
+    } else {
+        res.render('crystals/new', {
         title: 'New Crystal',
-    });
+        });
+    }
 };
 
 function create(req, res) {
-    console.log(req.body)
-    Crystal.create(req.body, function (err, createdCrystal) {
-        if (err) {
-            console.log(err);
-            return res.redirect('/crystals/new');
-        };
-        console.log(createdCrystal, '< crystal added by user');
-        res.redirect('/crystals')
-    });
+    console.log(req.body.name, 'name')
+    const n = req.body.name;
+    req.body.name = n.toLowerCase();
+    if (req.user === undefined) {
+        res.redirect('/');
+    } else {
+        Crystal.create(req.body, function (err, createdCrystal) {
+            if (err) {
+                console.log(err);
+                return res.redirect('/crystals/new');
+            };
+            
+            createdCrystal.userCreated = req.user._id;
+            createdCrystal.save(function(err) {
+                console.log(createdCrystal, '< crystal added by user');
+                res.redirect('/crystals')
+            })
+        });
+    }
 };
 
 async function show(req, res) {
