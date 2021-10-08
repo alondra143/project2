@@ -1,68 +1,72 @@
 *{
     box-sizing: border-box;
 }
+body {
+    margin-right: 8rem;
+    color: whitesmoke;
+}
 
-.brand-logo {
-    margin-left: 15px;
+#show-container {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 3fr 1fr auto auto auto;
+
 }
-  
-  
-.collection-item form {
-    margin-top: -5px;
-}
-.navbar-fixed nav .nav-wrapper {
-    font-family: 'Megrim';
-    background-color: rgba(83, 21, 60, 1);
-}
-.rewrite-select {
+
+.browser-default {
     background-color: whitesmoke;
     color: rgba(83, 21, 60, 1);
-    padding: 10px;
+    width: 23rem;
+    height: 2rem;
 }
 h2 {
     font-family: 'Major Mono Display';
 }
-/* #section-container {
-    display: inline-flex; */
+#user-collections {
+    width: 24rem;
+    height: 2rem;
+}
+.item-a {
+    grid-row: 1 / 7;
+    grid-column: 1 / 2;
+}
+img.item-a {
+    height: 400px;
+}
+.item-b {
+    font-family: 'Megrim';
+    justify-self: left;
+    float: left;
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+}
 
-/* Heading */
-#show-container h3{
-    transform:translatex(266px) translatey(-214px);
-    width:615px;
-   }
-   
-   /* Show container */
-   #show-container{
-    display:grid;
-    transform:translatex(-23px) translatey(5px);
-    align-content:center;
-    justify-content:center;
-   }
-   
-   /* Division */
-   #show-container div{
-    min-height:35px;
-    transform:translatex(265px) translatey(-208px);
-    width:576px;
-   }
-   
-   /* Image */
-   #show-container img{
-    margin-bottom:0px;
-   }
-   
-   /* User collections */
-   #user-collections{
-    padding-right:273px;
-    min-height:53px;
-    position:relative;
-    top:-198px;
-    left:218px;
-   }
-   
-   /* Button */
-   #add-crys-to-coll button{
-    transform:translatex(292px) translatey(-6px);
-    width:142px;
-    min-height:53px;
-   }
+.item-c {
+    justify-self: left;
+    grid-row: 2 / 4;
+    grid-column: 2 / 3;
+}
+
+.item-d {
+    justify-self: left;
+    grid-row: 4 / 5;
+    grid-column: 2 / 3;
+}
+
+.item-e {
+    justify-self: left;
+    grid-row: 5 / 6;
+    grid-column: 2 / 3;
+}
+.item-f {
+    justify-self: left;
+    grid-row: 6 / 7;
+    grid-column: 2 / 3;
+    display: inline-flex;
+}
+button {
+    display: inline-block;
+    margin-top: 5px;
+}

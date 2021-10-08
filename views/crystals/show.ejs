@@ -1,23 +1,26 @@
 <%- include('../partials/header')  %> 
     <h2><%= title %></h2>
     <div id="show-container">
-        <img src=<%= crystal.image %>>
-        <h3><%= crystal.name %></h3>
+        <img src=<%= crystal.image %> class="item-a">
+        <h3 class="item-b"><%= crystal.name %></h3>
         <br>
-        <div>added by: <%= crystal.userCreated.name %> </div>
-        <div>color/variety: <%= crystal.color %> </div>
-        <div><%= crystal.usersAddedToCollection %></div>
-        <div>description: <%= crystal.description %></div>
-    <section id="user-collections">  
-    <form id="add-crys-to-coll" action="/crystals/<%= crystal._id %>" method="POST">
-        <select class="rewrite-select" name="collectionId">
-            <% collections.forEach(c => { %>
-            <option value=<%= c._id %>><%= c.name %></option>
-            <% }) %> 
-        </select>
-        <button type="submit">add to collection</button>
-    </form>
-    </section>
+        <div class="item-c">added by: <%= crystal.userCreated.name %> </div>
+        <div class="item-d">color/variety: <%= crystal.color %> </div>
+        <div class="item-e">description: <%= crystal.description %></div>
+        <div class="item-f">  
+            <form id="add-crys-to-coll" action="/crystals/<%= crystal._id %>" method="POST">
+                <select class="browser-default" name="collectionId">
+                    <% collections.forEach(c => { %>
+                        <% if (c.name === undefined) { %>
+                        <option>you dont have any :(</option>
+                        <% } else { %>
+                         <option value=<%= c._id %>><%= c.name %></option>
+                        <% } %> 
+                 <% }) %> 
+                </select>
+                <button type="submit">add to collection</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>

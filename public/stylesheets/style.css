@@ -60,10 +60,13 @@ p{
   height: 200px;
 }
 img {
-  max-height: 200px;
+  height: 200px;
   opacity: 0.5;
   transition: .4s ease-in-out;
   border-radius: 10%;
+}
+img.item-a {
+  height: 400px;
 }
 img:hover{
   opacity: 1;
