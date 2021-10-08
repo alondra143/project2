@@ -23,7 +23,7 @@ Learning about crystals has been prevalent in pop-culture for the last couple of
 
 
 ### Technologies Used:
-EJS | HTML | MongoDB | Mongoose | JavaScript | CSS
+EJS | HTML | Node.js | MongoDB | Mongoose | JavaScript | CSS
 
 
 
