@@ -11,7 +11,7 @@ body {
     place-items: center;
     align-content: center;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 3fr 1fr auto auto auto;
+    grid-template-rows: 3fr 1fr 1fr 1fr auto;
 
 }
 
@@ -21,20 +21,26 @@ body {
     width: 23rem;
     height: 2rem;
 }
+
 h2 {
     font-family: 'Major Mono Display';
 }
+
 #user-collections {
     width: 24rem;
     height: 2rem;
 }
+
 .item-a {
     grid-row: 1 / 7;
     grid-column: 1 / 2;
 }
+
 img.item-a {
     height: 400px;
+    opacity: 1;
 }
+
 .item-b {
     font-family: 'Megrim';
     justify-self: left;
@@ -66,7 +72,14 @@ img.item-a {
     grid-column: 2 / 3;
     display: inline-flex;
 }
+
 button {
     display: inline-block;
     margin-top: 5px;
+}
+
+button:hover {
+    transition: .2s ease-in-out;
+    background: rgba(83, 21, 60, 1);
+    color: whitesmoke;
 }

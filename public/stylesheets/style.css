@@ -21,28 +21,33 @@
 .collection-item form {
   margin-top: -5px;
 }
+
 .navbar-fixed nav .nav-wrapper {
   font-family: 'Megrim';
   background-color: rgba(83, 21, 60, 1);
 }
 
-#user-collections {
-  margin: 50px;
-  width: 150px;
-  padding: 5px 35px 5px 5px;
-  font-size: 16px;
-  border: 1px solid #CCC;
-  height: 34px;
+input[type=text] {
+  color: #cf6679;
 }
+
+input[type=submit]:hover {
+  transition: .2s ease-in-out;
+  background: black;
+  color: whitesmoke
+}
+
 body {
   background: #272727;
   color: whitesmoke;
   font-family: 'Montserrat', sans-serif;
 }
+
 p{
-  font-family: 'Megrim', serif;
-  font-size: 2rem;
+  font-family: 'Montserrat', serif;
+  font-size: 1.5rem;
 }
+
 .container {
   display: grid;
   justify-content: center;
@@ -56,22 +61,26 @@ p{
   padding-top: 27rem;
   color: rgba(154, 42, 64, 1);
 }
+
 .new-crystal{
   height: 200px;
 }
+
 img {
   height: 200px;
   opacity: 0.5;
   transition: .4s ease-in-out;
   border-radius: 10%;
 }
+
 img.item-a {
   height: 400px;
 }
+
 img:hover{
   opacity: 1;
-
 }
+
 a {
   color: #cf6679;
 }

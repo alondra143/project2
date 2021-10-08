@@ -12,11 +12,11 @@ module.exports = {
 }
 
 async function removeFromCollection(req, res) {
-    console.log('???');
-    console.log(req.params);
     try {
+        // find the collection we're removing a crystal from
         const collectionDoc = await Collection.findById(req.params.collectionId)
-            collectionDoc.crystalsAdded.remove(req.params.crystalId);
+        // remove the crystal by the id    
+        collectionDoc.crystalsAdded.remove(req.params.crystalId);
             collectionDoc.save(function(err) {
                 res.redirect(`/collections/${collectionDoc._id}/edit`)
             })
@@ -29,11 +29,11 @@ function edit(req, res) {
     Collection.findById(req.params.id)
                 .populate('crystalsAdded')
                 .exec(function(err, collection) {
+        // if user is not the owner, redirect to login
         if(!collection.userId.equals(req.user._id)) {
             res.redirect('/');
         } else {
-            console.log(collection, 'this is my collection');
-        res.render('collections/edit', {collection});
+            res.render('collections/edit', {collection});
         }
     })
 }
@@ -44,7 +44,6 @@ async function update(req, res) {
                 if(!collection.userId.equals(req.user._id)) {
                     res.redirect('/');
                 } else {
-                    console.log(req.body, 'this is my req.body')
                     collection.name = req.body.name;
                     collection.save(function(err) {
                         res.render('collections/show', {
@@ -91,11 +90,11 @@ async function index(req, res) {
         res.redirect('/');
     }
     try {
+        // find collections that have the same user ID as the user logged in
         const collections = await Collection.find({userId: req.user._id});
         res.render('collections/index', {
-            collections, title: 's Crystal Cluster',
+            collections, title: 's crystAl clusteR',
         })
-        console.log(collections);
     } catch(err) {
         res.send(err);
     }

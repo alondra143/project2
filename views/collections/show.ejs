@@ -1,6 +1,5 @@
 <%- include('../partials/header')  %> 
     <h2><%= collection.name %></h2>
-    <div>Created by: <%= collection.userName %></div>
     <div>CRYSTALS:</div>
     <ul><% collection.crystalsAdded.forEach(c => { %>
      <li><a href='/crystals/<%= c._id %>'><%= c.name %></a></li>

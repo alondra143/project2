@@ -1,11 +1,12 @@
 <%- include('../partials/header')  %> 
-<div><%= user.name %>'<%= title %> </div>
+<h3><%= user.name %>'<%= title %> </h3>
 <div>
     <% collections.forEach(c => { %>
-     <li>
-         <a href="/collections/<%= c._id %>"><%= c.name %></a>
+     <li class="cc">
+         <a href="/collections/<%= c._id %>" class="cc"><%= c.name %></a>
      </li>
     <% }) %>
 </div>
+<img src="https://i.imgur.com/kqWRfoJ.png" class="cc-logo">
 </body>
 </html>
