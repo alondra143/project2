@@ -13,12 +13,13 @@ Learning about crystals has been prevalent in pop-culture for the last couple of
 ### Screenshots
 | Screenshot | Description |
 |------------ | ------------|
-| App's landing page | img here |
-| Home Page | img here |
-| Details | img here |
-| User Collections | img here |
-| Collection Details | img here |
-| Edit Collection | img here |
+| App's landing page | <img src="https://i.imgur.com/QoFtiPT.png" width="900"> |
+| Home Page | <img src="https://i.imgur.com/KF5yTuu.png" width="900"> |
+| Details | <img src="https://i.imgur.com/lCS34m7.png" width="900"> |
+| Create a New Crystal | <img src="https://i.imgur.com/lFrQiHi.png" width="900"> |
+| User Collections | <img src="https://i.imgur.com/AhFpmyT.png" width="900"> |
+| Collection Details | <img src="https://i.imgur.com/RzmbxX1.png" width="900"> |
+| Edit Collection | <img src="https://i.imgur.com/YA4s0Os.png" width="900"> |
 
 
 ### Technologies Used:
@@ -33,8 +34,8 @@ EJS | HTML | MongoDB | Mongoose | JavaScript | CSS
 
 
 ## Next Steps (Icebox):
-There's a lot of different ways that this app could grow and be more interactive between users. A main enhacement I would want to implement would be the ability to have users leave a comment on specific crystal pages to share their input on crystals that have already been created on the page. Being able to record the amount of users that have added a specific crystal to a collection can allow for users to see what's been popular on the site, and maybe would compell them to look into the crystal.
+There's a lot of different ways that this app could grow and be more interactive between users. A main enhacement I would want to implement would be the ability to have users leave a comment on specific crystal pages to share their input on crystals that have already been created on the page. Being able to record the amount of users that have added a specific crystal to a collection can have users see what's been popular on the site. With this functionality, I would love to incorporate a sorting function that allows users to organize the order of the crystals by name, most recent, and most popular. For personalization, another idea would be allowing users to add a cover image to each collection when it renders on their page.
 
-Other enhancements would be the ability to move crystals from one collection to another, rather than having to add it to different collections and delete it from the incorrect collection.
+Other enhancements would be the ability to move crystals from one collection to another, changing the order of the crystals in their specific collection, and have users make personal notes on their collections.
 
-For back-end development, I would want to implement stricter guidelines for submitting a crystal into the database, allow users to sort the crystals by alphabetical order or most popular, create the ability to have users share their collections either with other users or on different platforms, and have a more perosnalized user profile from the data retrieved by oAuth Google.
+In the near future, I would want to implement stricter guidelines for submitting a crystal into the database, create the ability to let users share their collections either with other users or on different platforms, and have a more perosnalized user profile from the data retrieved by oAuth Google.
