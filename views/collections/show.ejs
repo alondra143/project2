@@ -1,10 +1,16 @@
 <%- include('../partials/header')  %> 
-    <h2><%= collection.name %></h2>
-    <div>CRYSTALS:</div>
-    <ul><% collection.crystalsAdded.forEach(c => { %>
-     <li><a href='/crystals/<%= c._id %>'><%= c.name %></a></li>
-    <% }) %>
-    </ul>
-    <a href='/collections/<%= collection._id %>/edit'>edit your collection</a>
+<h2 class="cc-head"><%= collection.name %></h2>
+    <div class="extra">
+        <a href='/collections/<%= collection._id %>/edit'><p>edit your collection</p></a>
+    </div>
+    <div class="cc-show">CURRENT SELECTION:</div>
+    <div class="cc-show">
+        <ul>
+            <% collection.crystalsAdded.forEach(c => { %>
+             <li class="cc-show"><a href='/crystals/<%= c._id %>' class="cc-show"><%= c.name %></a></li>
+             <% }) %>
+        </ul>
+    </div>
+<img src="https://i.imgur.com/kqWRfoJ.png" class="cc-logo">
 </body>
 </html>

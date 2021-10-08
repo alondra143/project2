@@ -7,7 +7,6 @@ module.exports = {
     new: newCrystal,
     create,
     show,
-    // addUser,
     addToCollection,
 };
 
@@ -18,7 +17,6 @@ function addToCollection(req, res) {
         collection.crystalsAdded.push(req.params.id);
         // 3. save to update database
         collection.save(function(e){
-            console.log('user added crystal to a collection');
             // 4. take user back to the crystal's page if successful
             res.redirect(`/crystals/${req.params.id}`);
         })
@@ -55,7 +53,6 @@ function create(req, res) {
     } else {
         Crystal.create(req.body, function (err, createdCrystal) {
             if (err) {
-                console.log(err);
                 return res.redirect('/crystals/new');
             };
             // add user's id to userCreated property
@@ -83,6 +80,6 @@ async function show(req, res) {
             title: 'more about: ', crystal, collections,
         });
     } catch (err) {
-        console.log(err);
+        res.send(err);
     }
 };

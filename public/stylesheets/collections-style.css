@@ -1,3 +1,7 @@
+.cc-head {
+    text-align: center;
+    color: rgba(250, 173, 134, 1);
+}
 h3 {
     font-family: 'Major Mono Display', sans-serif;
     text-align: center;
@@ -23,4 +27,61 @@ img.cc-logo {
     margin-right: auto;
     margin-top: 2rem;
     opacity: 1;
+}
+.cc-show {
+    font-size: 2rem;
+    margin-left: 3rem;
+}
+
+li.cc-show {
+    font-family: 'Megrim', sans-serif;
+
+}
+
+a.cc-show {
+    color: whitesmoke;
+}
+
+a.cc-show:hover {
+    color: #cf6679;
+}
+
+.extra {
+    margin-left: 3rem;
+}
+
+.update-name {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+button[name=update] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#edit {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+
+button.cc-show {
+    padding: 0px 5px 0px 5px;
+    font-size: 1rem;
+    margin-right: 5px;
+}
+
+button.cc-show:hover {
+    background-color: #a91101;
+}
+
+button[name=delete] {
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
+
+button[name=delete]:hover {
+    background-color: #a91101;
 }

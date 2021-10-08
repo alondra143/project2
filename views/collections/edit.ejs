@@ -1,23 +1,24 @@
 <%- include('../partials/header')  %> 
 <h3>revamp your collection</h3>
     <form action='/collections/<%= collection._id %>?_method=PUT' method='POST'>
-        <div>new name for collection:</div>
-        <input name="name" value="<%= collection.name %>">
+        <div class="update-name">new name for collection:</div>
+        <input type="text" name="name" value="<%= collection.name %>"class="update-name">
         <button type="submit" name="update">UPDATE</button>
     </form>
-    <div>edit your cluster:</div>
-    <ul><% collection.crystalsAdded.forEach(c => { %>
+    <div id="edit">edit your cluster:</div>
+    <ul>
+        <% collection.crystalsAdded.forEach(c => { %>
         <% if (collection.userId.equals(user._id)) { %>
         <form action='/collections/<%= collection._id %>/crystals/<%= c._id %>?_method=DELETE' method='POST'>
-            <li><%= c.name %><button type='submit' value='<%= c._id %> '>x</button>
+            <li class="cc-show">
+                <button type='submit' value='<%= c._id %>'class="cc-show">x</button><%= c.name %>
             <% } %>
          </li>
         <% }) %>
         </form>
     </ul>
-    <div>delete entire collection:</div>
     <form action='/collections/<%= collection._id %>?_method=DELETE' method='POST'>
-        <button type='submit' name='delete'>X</button>
+        <button type='submit' name='delete'>delete entire collection</button>
     </form>
 
 </body>

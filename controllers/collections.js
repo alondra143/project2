@@ -46,9 +46,7 @@ async function update(req, res) {
                 } else {
                     collection.name = req.body.name;
                     collection.save(function(err) {
-                        res.render('collections/show', {
-                            collection
-                        })
+                        res.redirect(`/crystals/${req.user._id}/collections`);
                     })
                 }
     }catch(err) {
@@ -80,7 +78,6 @@ function create(req, res) {
     collection.save(function(err) {
         if(err) console.log(err)
     })
-    console.log(collection);
  res.redirect('/crystals')
 };
 

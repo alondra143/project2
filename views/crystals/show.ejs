@@ -6,7 +6,7 @@
         <br>
         <div class="item-c">added by: <%= crystal.userCreated.name %> </div>
         <div class="item-d">color/variety: <%= crystal.color %> </div>
-        <div class="item-e">description: <%= crystal.description %></div>
+        <div class="item-e"><%= crystal.description %></div>
         <div class="item-f">  
             <form id="add-crys-to-coll" action="/crystals/<%= crystal._id %>" method="POST">
                 <select class="browser-default" name="collectionId">
